@@ -6,11 +6,10 @@ import numpy as np
 model = YOLO("./best.pt")  # load a fine-tuned model
 
 # Inference using the model (img/video/stream)
-prediction_results = model("renders/rgb_000.png")
+""" prediction_results = model("renders/rgb_000.png")
 for idx,result in enumerate(prediction_results):
     masks = result.masks.xy  # mask in polygon format
-    print(np.stack(masks).shape)
     xyn = result.masks.xyn  # normalized
     masks = result.masks.data 
-    break
-prediction_results = model.predict("renders/rgb_012.png",save=True)
+    break """
+prediction_results = model.predict("renders/rgb_006.png",save=True)

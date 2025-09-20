@@ -301,7 +301,7 @@ def main():
 
     # 关键：强制用 ColorVisuals（而不是 TextureVisuals）
     mesh.visual = ColorVisuals(mesh, vertex_colors=rgba)
-
+    print(mesh.visual.kind) 
     # 导出 GLB（带 COLOR_0 顶点属性）
     mesh.export(OUT_GLB)
 

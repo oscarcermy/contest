@@ -7,14 +7,14 @@ import imageio
 from PIL import Image
 
 # 文件路径
-OBJ_PATH = "D:/learing____record/dataset/hy_gen/demo_textured.glb"  # 改成你的文件名
+OBJ_PATH = "./gen3/demo_textured.glb"  # 改成你的文件名
 OUT_DIR = "renders"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # 纹理图片路径
-ALBEDO_TEXTURE = "D:/learing____record/dataset/hy_gen/demo_textured.jpg"  # albedo 纹理
-METALLIC_TEXTURE = "D:/learing____record/dataset/hy_gen/demo_textured_metallic.jpg"  # metallic 纹理
-ROUGHNESS_TEXTURE = "D:/learing____record/dataset/hy_gen/demo_textured_roughness.jpg"  # roughness 纹理
+ALBEDO_TEXTURE = "./gen3/demo_textured.jpg"  # albedo 纹理
+METALLIC_TEXTURE = "./gen3/demo_textured_metallic.jpg"  # metallic 纹理
+ROUGHNESS_TEXTURE = "./gen3/demo_textured_roughness.jpg"  # roughness 纹理
 
 # 1) 载入网格（尽量别自动重拓扑/重新计算UV）
 mesh = trimesh.load(OBJ_PATH, force='mesh', process=False)
@@ -112,7 +112,7 @@ for i in range(NUM_VIEWS):
         "view_id": i,
         "fx": fx, "fy": fy, "cx": cx, "cy": cy,
         "R": R_wc.tolist(),  # 世界->相机
-        "t": t_wc.tolist(),  # 世界->相机
+        "t": cam_pos.tolist(),  # 世界->相机
         "W": W, "H": H
     })
 

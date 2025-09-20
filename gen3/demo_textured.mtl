@@ -1,0 +1,9 @@
+newmtl Material
+Kd 0.8 0.8 0.8
+Ke 0.0 0.0 0.0
+Ni 1.5
+d 1.0
+illum 2
+map_Kd demo_textured.jpg
+map_Pm demo_textured_metallic.jpg
+map_Pr demo_textured_roughness.jpg
